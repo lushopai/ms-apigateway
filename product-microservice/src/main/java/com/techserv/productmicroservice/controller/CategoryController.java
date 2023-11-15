@@ -1,6 +1,8 @@
 package com.techserv.productmicroservice.controller;
 
+import com.techserv.productmicroservice.config.Constants;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Data
 public class CategoryController {
 
-    @Value("${app.testProp}")
-    private String testProp;
+
+    @Autowired
+    private Constants constants;
+
+
 
     private String getTestProp(){
-        return this.testProp;
+        return constants.getActuator().get("testProp");
     }
 }
