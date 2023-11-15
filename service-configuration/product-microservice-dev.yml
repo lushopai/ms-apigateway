@@ -8,9 +8,6 @@ constants:
     secretKey: 1234567891010101
     expirationTimeInMillis: 600_000  
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/prueba
-    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
