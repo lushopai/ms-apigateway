@@ -1,0 +1,17 @@
+constants:
+  security:
+    jwtSecret: 12345
+    jwtExpirationMs: 3600
+    frontEndOrigin: "http://localhost:4200"
+    
+  jwt:
+    secretKey: 1234567891010101
+    expirationTimeInMillis: 600_000  
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: stock-microservice

@@ -1,0 +1,40 @@
+
+server:
+  port: 0
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: root
+      password: secret
+      profile: dev
+    vault:
+      application-name: stock-microservice
+      host: localhost
+      port:  8200
+      scheme: http
+      authentication: TOKEN
+      token: 00000000-0000-0000-0000-000000000000
+  application:
+    name: stock-microservice
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/techserv-microservice-realm
+
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
