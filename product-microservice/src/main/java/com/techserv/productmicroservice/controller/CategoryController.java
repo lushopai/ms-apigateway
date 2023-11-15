@@ -14,23 +14,21 @@ import javax.annotation.PostConstruct;
 
 @RestController
 @RequestMapping("/api/categories")
-@RefreshScope
+//@RefreshScope
 public class CategoryController {
 
     @Autowired
     private Constants constants;
     
-    String demo = "";
 
     @PostConstruct
     public void init() {
-    	System.out.println("sdas" + constants.getJwt());
-    	demo = constants.getJwt().getSecretKey().toString();
-    	System.out.println(demo);
+
+    	System.out.println(constants);
     }
 
     @GetMapping("/test-prop")
     private String getTestProp(){
-        return demo;
+        return constants.getJwt().getSecretKey();
     }
 }

@@ -4,3 +4,13 @@ spring:
       uri: http://localhost:8888
       username: root
       password: secret
+      
+      profile: dev
+  application:
+    name: arriving-microservice    
+server:
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}

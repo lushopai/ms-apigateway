@@ -8,6 +8,13 @@ spring:
       username: root
       password: secret
       profile: dev
+    vault:
+      application-name: product-microservice
+      host: localhost
+      port:  8200
+      scheme: http
+      authentication: TOKEN
+      token: 00000000-0000-0000-0000-000000000000
   application:
     name: product-microservice
 
@@ -20,3 +27,4 @@ management:
     web:
       exposure:
         include: "*"
+        
