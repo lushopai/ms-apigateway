@@ -7,6 +7,10 @@ spring:
         git:
           uri: https://github.com/lushopai/ms-apigateway.git
           clone-on-start: true
+          search-paths: service-configuration
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+          default-label: "main"
 
 server:
   port: 8888
