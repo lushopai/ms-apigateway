@@ -18,11 +18,11 @@ import javax.annotation.PostConstruct;
 public class CategoryController {
 
 
-    @Autowired
-    private Constants constants;
+    @Value("${key.value}")
+    private String testProp;
 
     @GetMapping("/test-prop")
     private String getTestProp(){
-        return "hOLA";
+        return this.testProp;
     }
 }

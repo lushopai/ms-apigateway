@@ -1,7 +1,6 @@
 
-constants:
-  actuator:
-    testProp= "Testing"
+key:
+  name: Test
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/prueba
