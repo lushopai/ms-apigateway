@@ -9,3 +9,5 @@ spring:
   cloud:
     config:
       profile: dev
+  application:
+    name: arriving-microservice
