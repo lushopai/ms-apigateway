@@ -18,11 +18,19 @@ import javax.annotation.PostConstruct;
 public class CategoryController {
 
 
-    @Value("${key.value}")
-    private String testProp;
+
+    @Value("${app.name}")
+    private String appName;
+
+    @Value("${app.version}")
+    private String appVersion;
+
+    @Value("${app.description}")
+    private String appDescription;
 
     @GetMapping("/test-prop")
     private String getTestProp(){
-        return this.testProp;
+        System.out.println(appDescription);
+        return this.appDescription;
     }
 }

@@ -1,5 +1,7 @@
-key:
-  name: Test
+app:
+  name: MyApp
+  version: 1.0.0
+  description: Mi aplicación Spring Boot
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/prueba
