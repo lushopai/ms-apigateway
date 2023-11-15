@@ -19,18 +19,11 @@ public class CategoryController {
 
 
 
-    @Value("${app.name}")
-    private String appName;
 
-    @Value("${app.version}")
-    private String appVersion;
-
-    @Value("${app.description}")
-    private String appDescription;
 
     @GetMapping("/test-prop")
     private String getTestProp(){
-        System.out.println(appDescription);
-        return this.appDescription;
+
+        return null;
     }
 }

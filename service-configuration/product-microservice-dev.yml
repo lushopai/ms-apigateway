@@ -1,7 +1,12 @@
-app:
-  name: MyApp
-  version: 1.0.0
-  description: Mi aplicación Spring Boot
+constants:
+  security:
+    jwtSecret: 12345
+    jwtExpirationMs: 3600
+    frontEndOrigin: "http://localhost:4200"
+    
+  jwt:
+    secretKey: 123456789
+    expirationTimeInMillis: 600_000  
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/prueba

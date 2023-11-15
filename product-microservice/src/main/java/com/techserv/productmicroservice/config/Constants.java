@@ -14,6 +14,6 @@ import java.util.HashMap;
 public class Constants {
 
 
-    //private HashMap<String,String> actuator;
-
+    private HashMap<String,String> security;
+    private HashMap<String, String> jwt;
 }
