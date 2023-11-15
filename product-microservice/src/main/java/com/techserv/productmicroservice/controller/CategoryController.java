@@ -17,13 +17,20 @@ import javax.annotation.PostConstruct;
 @RefreshScope
 public class CategoryController {
 
+    @Autowired
+    private Constants constants;
+    
+    String demo = "";
 
-
-
+    @PostConstruct
+    public void init() {
+    	System.out.println("sdas" + constants.getJwt());
+    	demo = constants.getJwt().getSecretKey().toString();
+    	System.out.println(demo);
+    }
 
     @GetMapping("/test-prop")
     private String getTestProp(){
-
-        return null;
+        return demo;
     }
 }

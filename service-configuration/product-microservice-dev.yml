@@ -5,7 +5,7 @@ constants:
     frontEndOrigin: "http://localhost:4200"
     
   jwt:
-    secretKey: 123456789
+    secretKey: 1234567891010101
     expirationTimeInMillis: 600_000  
 spring:
   datasource:

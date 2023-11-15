@@ -13,7 +13,19 @@ import java.util.HashMap;
 @Data
 public class Constants {
 
+    private Security security;
+    private Jwt jwt;
 
-    private HashMap<String,String> security;
-    private HashMap<String, String> jwt;
+    @Data
+    public static class Security {
+        private String jwtSecret;
+        private long jwtExpirationMs;
+        private String frontEndOrigin;
+    }
+
+    @Data
+    public static class Jwt {
+        private String secretKey;
+        private long expirationTimeInMillis;
+    }
 }
