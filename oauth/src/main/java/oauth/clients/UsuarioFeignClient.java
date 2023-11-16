@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "usuarios-microservice")
 public interface UsuarioFeignClient {
 	
-	@GetMapping("/buscar")
+	@GetMapping("/api/usuarios/buscar")
 	public oauth.models.Usuario findByUsername(@RequestParam String term);
 	
 	
