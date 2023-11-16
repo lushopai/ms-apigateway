@@ -4,27 +4,34 @@ spring:
 
   cloud:
     gateway:
+      routes:
+       - id: product-microservice
+         uri: lb://PRODUCT-MICROSERVICE
+         predicates:
+           - Path=/api/products/**,/api/categories/**
+       - id: arriving-service
+         uri:
+           lb://ARRIVING-MICROSERVICE
+         predicates:
+           - Path=/api/arriving/**
+           
+       - id: usuarios-microservice
+         uri:
+           lb://USUARIOS-MICROSERVICE
+         predicates:
+           - Path=/api/usuarios/**
+            
+           
+        
+
       discovery:
         locator:
           enabled: true
-      default-filters: TokenRelay
+    loadbalancer:
+      ribbon:
+        enabled: false
 
-  eureka:
-    instance:
-      instance-id: ${spring.application.name}:${random.uuid}
-
-  loadbalancer:
-    ribbon:
-      enabled: false
-
-  gateway:
-    routes:
-      - id: product-microservice
-        uri: lb://PRODUCT-MICROSERVICE
-        predicates:
-          - Path=/api/products/**, /api/categories/**
-
-      - id: usuarios-microservice
-        uri: lb://USUARIOS-MICROSERVICE
-        predicates:
-          - Path=/api/usuarios/**
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+          
