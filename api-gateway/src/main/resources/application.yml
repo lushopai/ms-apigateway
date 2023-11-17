@@ -20,12 +20,17 @@ spring:
            lb://USUARIOS-MICROSERVICE
          predicates:
            - Path=/api/usuarios/**
+         filters:
+            - AuthFilter
            
        - id: oauth-microservice
          uri:
            lb://OAUTH-MICROSERVICE  
          predicates:
-           - Path=/api/security/**        
+           - Path=/api/security/**,/oauth/**
+
+
+
             
            
         

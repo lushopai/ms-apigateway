@@ -18,7 +18,7 @@ import oauth.clients.UsuarioFeignClient;
 import oauth.models.Usuario;
 
 @Service
-public class UsuarioService implements UserDetailsService {
+public class UsuarioService implements UserDetailsService,IUsuarioService {
 	
 	private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
@@ -42,6 +42,11 @@ public class UsuarioService implements UserDetailsService {
 		LOGGER.info("usuario autenticado");
 		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 
+	}
+
+	@Override
+	public Usuario findByUsername(String username) {
+		return client.findByUsername(username);
 	}
 
 }
